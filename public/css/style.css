@@ -1,0 +1,226 @@
+/* Reset e base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Telas */
+.tela {
+    width: 100%;
+    max-width: 540px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.ativa {
+    display: flex;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* Formulário */
+.campo {
+    margin-bottom: 16px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #4f46e5;
+}
+
+/* Botões */
+.btn-primary {
+    width: 100%;
+    padding: 13px;
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #4338ca;
+}
+
+.btn-primary:disabled {
+    background: #a5a5a5;
+    cursor: not-allowed;
+}
+
+.btn-grande {
+    padding: 18px;
+    font-size: 1.1rem;
+    margin-top: 16px;
+}
+
+.btn-logout {
+    background: none;
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-logout:hover {
+    border-color: #e53e3e;
+    color: #e53e3e;
+}
+
+/* Mensagens */
+.mensagem {
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+.mensagem.erro {
+    background: #fff0f0;
+    color: #c53030;
+    border: 1px solid #feb2b2;
+}
+
+.mensagem.sucesso {
+    background: #f0fff4;
+    color: #276749;
+    border: 1px solid #9ae6b4;
+}
+
+.mensagem.aviso {
+    background: #fffbeb;
+    color: #744210;
+    border: 1px solid #fbd38d;
+}
+
+/* Badge de plano */
+.badge {
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.badge.ativo {
+    background: #c6f6d5;
+    color: #22543d;
+}
+
+.badge.vencido {
+    background: #fed7d7;
+    color: #742a2a;
+}
+
+.badge.cancelado {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+/* Header do painel */
+.header-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+
+th {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 2px solid #eee;
+}
+
+td {
+    padding: 12px 12px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+.instrucao {
+    color: #555;
+    text-align: center;
+    padding: 8px 0;
+}
