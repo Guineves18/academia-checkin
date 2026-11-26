@@ -8,11 +8,11 @@ const bcrypt = require('bcrypt');
 const db = require('./connection');
 
 function executarSeed() {
-    console.log('🔄 Executando schema.sql...');
+    console.log('Executando schema.sql...');
     const schemaSql = fs.readFileSync(path.join(__dirname, 'schema.sql'), 'utf-8');
     db.exec(schemaSql);
 
-    console.log('🔐 Gerando hashes de senha com bcrypt...');
+    console.log('Gerando hashes de senha com bcrypt...');
     // Criptografia obrigatória: nunca salvar senhas em texto puro!
     const senhaPadrao = 'senha123';
     const saltRounds = 10;
@@ -31,13 +31,13 @@ function executarSeed() {
     dataPassada.setDate(hoje.getDate() - 10);
     const vencimentoVencido = dataPassada.toISOString().split('T')[0];
 
-    console.log('👥 Inserindo usuários de teste...');
+    console.log('Inserindo usuários de teste...');
     const insertUsuario = db.prepare(`
         INSERT INTO usuarios (nome, email, senha_hash, papel, plano_tipo, plano_vencimento, plano_status)
         VALUES (?, ?, ?, ?, ?, ?, ?)
     `);
 
-    // 1. Recepcionista / Admin
+    // 1. Recepcionista / Administração
     insertUsuario.run('Ana Recepção', 'admin@academia.com', hashComum, 'recepcionista', 'anual', '2030-12-31', 'ativo');
 
     // 2. Aluno Ativo (Carlos Silva)
@@ -46,7 +46,7 @@ function executarSeed() {
     // 3. Aluno Vencido (Marcos Souza)
     insertUsuario.run('Marcos Souza', 'marcos@email.com', hashComum, 'aluno', 'trimestral', vencimentoVencido, 'vencido');
 
-    console.log('📋 Inserindo check-ins de histórico para testes...');
+    console.log('Inserindo check-ins de histórico para testes...');
     const insertCheckin = db.prepare(`
         INSERT INTO checkins (usuario_id, data_checkin, hora_checkin)
         VALUES (?, ?, ?)
@@ -59,7 +59,7 @@ function executarSeed() {
 
     insertCheckin.run(alunoAtivo.lastInsertRowid, dataOntem, '08:30:00');
 
-    console.log('✅ Banco de dados populado com sucesso!');
+    console.log('Banco de dados populado com sucesso!');
     console.log('----------------------------------------------------');
     console.log('Usuários criados para teste (senha para todos: senha123):');
     console.log('  1. Recepcionista: admin@academia.com');
